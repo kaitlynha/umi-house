@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/*
+ * Palette: white field, brown type, sage accents.
+ *
+ * Semantic Tailwind colors (`text-foreground`, `text-muted`, …) map to CSS vars
+ * that swap under `.dark` on <html> (next-themes).
+ */
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #2f261f;
+  --card: #e9f2eb;
+  --muted: #5c534a;
+  --accent: #1f6b48;
+  --accent-muted: #3d865f;
+  --surface-primary: #3d2f26;
+  --surface-primary-hover: #4f3f34;
+  --btn-fg: #ffffff;
+  --border-subtle: rgba(47, 38, 31, 0.1);
+  --shadow-soft: rgba(31, 107, 72, 0.14);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #14110f;
+  --foreground: #eef3ef;
+  --card: #17231c;
+  --muted: #9fb0a4;
+  --accent: #2b6040;
+  --accent-muted: #a8f0c4;
+  --surface-primary: #3d8f5c;
+  --surface-primary-hover: #52a56f;
+  --btn-fg: #18140f;
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --shadow-soft: rgba(0, 0, 0, 0.45);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-card: var(--card);
+  --font-sans: var(--font-sans-body), ui-sans-serif, system-ui;
+
+  --color-stone-50: #f5faf7;
+  --color-stone-100: #e5efe8;
+  --color-stone-200: #cddfd4;
+  --color-stone-300: #aec4b6;
+  --color-stone-400: #849485;
+  --color-stone-500: #627066;
+  --color-stone-600: #4d524c;
+  --color-stone-700: #3f3a34;
+  --color-stone-800: #342b24;
+  --color-stone-900: #2a221c;
+  --color-stone-950: #171410;
+}
+
+.umi-display {
+  font-family: var(--font-serif-display), "Fraunces", ui-serif, Georgia, serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 32%, white);
+  color: var(--foreground);
+}
